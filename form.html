@@ -1,97 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
 </head>
+
 <body>
-    <h1 align="center"> 
+    <!-- <h1 align="center">
         Form
     </h1>
-    <hr>
+    <hr> -->
     <br><br>
-   <form action="" method="post">
-    <table  width="1350px" cellpadding="10" align="center" border="1" >
-        <tr>
-            <td width="33%">
-                Enter your Email
-            </td>
-            <td>
-                Set password
-            </td>
-            <td>
-                Mobile Number
-            </td>
-        </tr>
-        <tr>
-            <td width="33%">
-                <input type="email" name="txtemail" placeholder="Enter your Email" id="txtemail" required>
-            </td>
-            <td>
-                <input type="password" name="txtpassword" id="txtpassword" placeholder="Enter Your Password" required>
-            </td>
-            <td>
-                <input type="tel" placeholder="Enter Your Mobile Number" name="txtphone" id="txtphone" required>
-            </td>
-        </tr>  
-        <tr >
-            <td width="33%">
-                Enter Slogan Here
-            </td>
-            <td>
-                Select Logo
-            </td>
-            <td>
-                Select Category
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="text" name="txtslogan" id="txtslogan" required placeholder="Enter Company Name">
-            </td>
-            <td>
-                <input type="file" name="imglogo" id="imglogo">
-            </td>
-            <td>
-                <select name="category" id="category">
-                    <option value="1">Select Category</option>
-                </select>
-            </td>
-        </tr>
-        <table align="center" cellpadding="10" width="1350px" border="1">
+    <form action="" method="post">
+        <table width="1350px" cellpadding="10" align="center" border="1">
+            <tr>
+                <td width="33%">
+                    Enter your Email
+                </td>
+                <td>
+                    Set password
+                </td>
+                <td>
+                    Mobile Number
+                </td>
+            </tr>
+            <tr>
+                <td width="33%">
+                    <input type="email" name="txtemail" placeholder="Enter your Email" id="txtemail" required>
+                </td>
+                <td>
+                    <input type="password" name="txtpassword" id="txtpassword" placeholder="Enter Your Password"
+                        required>
+                </td>
+                <td>
+                    <input type="tel" placeholder="Enter Your Mobile Number" name="txtphone" id="txtphone" required>
+                </td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <table width="1350px" cellpadding="10" align="center" border="1">
+            <tr>
+                <td width="33%">
+                    Enter Slogan Here
+                </td>
+                <td>
+                    Select Logo
+                </td>
+                <td>
+                    Select Category
+                </td>
+            </tr>
             <tr>
                 <td>
+                    <input type="text" name="txtslogan" id="txtslogan" required placeholder="Enter Company Name">
+                </td>
+                <td>
+                    <input type="file" name="imglogo" id="imglogo">
+                </td>
+                <td>
+                    <select name="category" id="category">
+                        <option value="1">Select Category</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <table width="1350px" cellpadding="10" align="center" border="1">
+            <tr>
+                <td>
+                    Enter Your Name
+                </td>
+                <td>
+                    Enter Your Surname
+                </td>
+                <td>
+                    Enter Your Father Name
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Enter your name" id="txtname" name="txtname" required>
+                </td>
+                <td>
+                    <input type="text" placeholder="Enter Surname" id="txtsurname" name="txtsurname" required>
+                </td>
+                <td>
+                    <input type="text" placeholder="Enter your father name" id="txtfathername" name="txtfathername" required>
+                </td>
+            </tr>
+        </table>
+
+        <br><br>
+
+        <table align="center" cellpadding="10" width="1350px" border="1">
+            <tr>
+                <td width="50%">
                     Enter Your Address 1
                 </td>
                 <td>
                     Enter Your Address 2
                 </td>
-                <tr>
-                    <td>
-                        <textarea name="address" id="" cols="80" rows="10"></textarea>
-                    </td>
-                    <td colspan="2">
-                        <textarea name="address" id="" cols="80" rows="10"></textarea>
-    
-                    </td>
-                </tr>
+            <tr>
+                <td width="50%">
+                    <textarea name="address" id="" cols="80" rows="10"></textarea>
+                </td>
+                <td colspan="2">
+                    <textarea name="address" id="" cols="80" rows="10"></textarea>
+
+                </td>
+            </tr>
             </tr>
             <tr>
                 <td colspan="2" align="right">
-                     <input type="submit" value="Create Profile" name="profile" id="profile">
-                     <input type="reset" value="Reset" name="reset" id="reset">
-                     <input type="submit" value="Back" name="back" id="back">
-                     &emsp;&emsp;&emsp;&emsp;
+                    <input type="submit" value="Create Profile" name="profile" id="profile">
+                    <input type="reset" value="Reset" name="reset" id="reset">
+                    <input type="submit" value="Back" name="back" id="back">
+                    &emsp;&emsp;&emsp;&emsp;
                 </td>
             </tr>
         </table>
-        
-        
-           
-        
-    </table>
-   </form>
+    </form>
 </body>
+
 </html>

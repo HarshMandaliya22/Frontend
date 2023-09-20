@@ -2,125 +2,89 @@
 <html lang="en">
 
 <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Register Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
-     <h1 align="center">
-          Register Form
-     </h1>
-     <hr>
-     <form action="" method="post" enctype="multipart/form-data">
-          <table border="2" align="center" width="50%" cellpadding="5">
-               <tr>
-                    <td colspan="2" align="center">
-                         <h2>Register With Us</h2>
-                    </td>
-               </tr>
-               <tr>
-                    <td>
-                         <label for="txtname">
-                              Enter your name :
-                         </label>
-                    </td>
-                    <td>
-                         <input type="text" name="txtname" placeholder="FirstName LastName " id="txtname" required>
-                    </td>
-               </tr>
-               <tr>
-                    <td>
-                         Enter your contact number :
-                    </td>
-                    <td>
-                         <input type="tel" name="txtcontact" placeholder="Enter your phone number " id="txtcontact"
-                              required>
-                    </td>
-               </tr>
-               <tr>
-                    <td>
-                         Enter your Date of Birth :
-                    </td>
-                    <td>
-                         <input type="date" name="dob" id="dob" required>
-                    </td>
-               </tr>
-               <tr>
-                    <td>
-                         Enter Datetime :
-                    </td>
-                    <td>
-                         <input type="datetime" name="datetime" id="datetime" required>
-                    </td>
-               </tr>
-               <tr>
-                    <td>
-                         Enter time :
-                    </td>
-                    <td>
-                         <input type="time" name="time" id="time">
-                    </td>
-               </tr>
-               <tr>
-                    <td>
-                         Select your gender
-                    </td>
-                    <td>
-                         <input type="radio" name="gender" id="" value="1" checked>Male
-                         <input type="radio" name="gender" id="" value="0">Female
-                    </td>
-               </tr>
-               <tr>
-                    <td>
-                         Select your Hobbies :
-                    </td>
-                    <td>
-                         <input type="checkbox" name="hobbies" id="" value="1" checked>Hockey
-                         <input type="checkbox" name="hobbies" id="" value="2">Cricket
-                         <input type="checkbox" name="hobbies" id="" value="3">Coding
-                    </td>
-               </tr>
-               <tr>
-                    <td>
-                         Select Your country
-                    </td>
-                    <td>
-                         <select name="country" id="">
-                              <option value="0">Select Country</option>
-                              <option value="1" selected>Bharat</option>
-                              <option value="2">Usa</option>
-                              <option value="3">China</option>
-                         </select>
-                    </td>
-               </tr>
-               <tr>
-                    <td>
-                         Upload Your Image :
-                    </td>
-                    <td>
-                         <input type="file" name="image" id="">
-                    </td>
-               </tr>
-               <tr>
-                    <td>
-                         Enter your Address
-                    </td>
-                    <td>
-                         <textarea name="address" id="" cols="30" rows="2">
-this is my address
-                    </textarea>
-                    </td>
-               </tr>
-               <tr>
-                    <td colspan="2" align="center">
-                         <input type="submit" value="Register">
-                         <input type="reset" value="Clear all">
-                    </td>
-               </tr>
-          </table>
-     </form>
+    <h2>
+        <font color="blue">
+            Create Profile
+        </font>
+    </h2>
+
+    <br>
+    <br>
+    <br>
+    <table border="1" width="100%"  align="left">
+        <tr>
+            <td>Enter Your Email</td>
+            <td>Set Password</td>
+            <td>Mobile Number</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="email" placeholder="Enter Your Email" id required ></td>
+            <td><input type="password" name="password" placeholder="Enter Eight Digit Passworld" required ></td>
+            <td><input type="tel" name="phone_number" placeholder="Enter your Mobile Number" required></td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table border="1" width="100%"  align="left">
+        <tr>
+            <td>Enter Slogan Here</td>
+            <td>Select Logo</td>
+            <td>Select Category</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="slogan"  placeholder="Enter Company Name/Service Name" required></td>
+            <td><input type="password" placeholder="Enter Eight Digit Passworld" ></td>
+            <td><input type="tel" placeholder="Enter your Mobile Number"></td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table border="1" width="100%"  align="left">
+        <tr>
+            <td>Enter Your Name</td>
+            <td>Enter Your Surname</td>
+            <td>Enter Your Father Name</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="personname"  placeholder="Enter Your Name" required></td>
+            <td><input type="text" name="surname"  placeholder="Enter Your Surname" required></td>
+            <td><input type="text" name="fathername"  placeholder="Enter Your Father Name" required></td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table border="1" width="100%"  align="left">
+        <tr>
+            <td>Enter Address 1</td>
+            <td>Enter Address 2</td>
+            
+        </tr>
+        <tr>
+            <td><textarea name="address" id="" cols="80" rows="4">Address 1</textarea></td>
+            <td><textarea name="address" id="" cols="80" rows="4">Address 1</textarea></td>
+            
+        </tr>
+    </table>
+
+
 </body>
 
 </html>
