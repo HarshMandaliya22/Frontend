@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Register Form</title>
+</head>
+
+<body>
+     <h1 align="center">
+          Register Form
+     </h1>
+     <hr>
+     <form action="" method="post" enctype="multipart/form-data">
+          <table border="2" align="center" width="50%" cellpadding="5">
+               <tr>
+                    <td colspan="2" align="center">
+                         <h2>Register With Us</h2>
+                    </td>
+               </tr>
+               <tr>
+                    <td>
+                         <label for="txtname">
+                              Enter your name :
+                         </label>
+                    </td>
+                    <td>
+                         <input type="text" name="txtname" placeholder="FirstName LastName " id="txtname" required>
+                    </td>
+               </tr>
+               <tr>
+                    <td>
+                         Enter your contact number :
+                    </td>
+                    <td>
+                         <input type="tel" name="txtcontact" placeholder="Enter your phone number " id="txtcontact"
+                              required>
+                    </td>
+               </tr>
+               <tr>
+                    <td>
+                         Enter your Date of Birth :
+                    </td>
+                    <td>
+                         <input type="date" name="dob" id="dob" required>
+                    </td>
+               </tr>
+               <tr>
+                    <td>
+                         Enter Datetime :
+                    </td>
+                    <td>
+                         <input type="datetime" name="datetime" id="datetime" required>
+                    </td>
+               </tr>
+               <tr>
+                    <td>
+                         Enter time :
+                    </td>
+                    <td>
+                         <input type="time" name="time" id="time">
+                    </td>
+               </tr>
+               <tr>
+                    <td>
+                         Select your gender
+                    </td>
+                    <td>
+                         <input type="radio" name="gender" id="" value="1" checked>Male
+                         <input type="radio" name="gender" id="" value="0">Female
+                    </td>
+               </tr>
+               <tr>
+                    <td>
+                         Select your Hobbies :
+                    </td>
+                    <td>
+                         <input type="checkbox" name="hobbies" id="" value="1" checked>Hockey
+                         <input type="checkbox" name="hobbies" id="" value="2">Cricket
+                         <input type="checkbox" name="hobbies" id="" value="3">Coding
+                    </td>
+               </tr>
+               <tr>
+                    <td>
+                         Select Your country
+                    </td>
+                    <td>
+                         <select name="country" id="">
+                              <option value="0">Select Country</option>
+                              <option value="1" selected>Bharat</option>
+                              <option value="2">Usa</option>
+                              <option value="3">China</option>
+                         </select>
+                    </td>
+               </tr>
+               <tr>
+                    <td>
+                         Upload Your Image :
+                    </td>
+                    <td>
+                         <input type="file" name="image" id="">
+                    </td>
+               </tr>
+               <tr>
+                    <td>
+                         Enter your Address
+                    </td>
+                    <td>
+                         <textarea name="address" id="" cols="30" rows="2">
+this is my address
+                    </textarea>
+                    </td>
+               </tr>
+               <tr>
+                    <td colspan="2" align="center">
+                         <input type="submit" value="Register">
+                         <input type="reset" value="Clear all">
+                    </td>
+               </tr>
+          </table>
+     </form>
+</body>
+
+</html>
