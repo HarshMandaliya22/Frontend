@@ -1,0 +1,25 @@
+#nav_logo{
+    display: flex;
+    background-color: bisque;
+    gap: 30px;
+    margin-top: 20px;
+}
+#logo{
+    display: flex;
+    font-size: 1.2rem;
+
+}
+#links{
+    /* background-color: gray; */
+    margin-top: 40px;
+    width: 1000px;
+}
+#links>a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#name{
+    margin-top: 40px;
+}

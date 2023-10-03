@@ -1,0 +1,23 @@
+#nav_logo {
+    display: flex;
+}
+
+#links {
+    margin-top: 40px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    display: flex
+}
+#links>a{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#head{
+    /* background-color: bisque; */
+    width: 800px;
+    margin-left: 650px;
+    margin-top: 40px;
+    display: flex;
+    gap: 40px;
+    font-size: 1.3rem;
+}
