@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Use all regional language in page  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- to get size of full device  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- to get availiable size of screen  -->
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 align="center">Registration Form</h1>
+    <hr>
+    <br><br><br><br>
+
+   <form action="table.html" method="post">
+    <table align="center" border="2" cellpadding="10" width="50%">
+        <tr>
+            <td colspan="2" align="center">Registration Form</td>
+        </tr>
+        <tr>
+            <td>
+                Enter Your Name
+            </td>
+            <td>
+                <label for="txtname">
+                    <input type="text" id="txtname" name="txtname" placeholder="FirstName LastName" required>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Enter Your Email
+            </td>
+            <td>
+                <label for="txtemail">
+                    <input type="email" placeholder="Email" id="txtemail" name="txtemail" required>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Enter Your Contact Number
+            </td>
+            <td>
+                <label for="txttel">
+                    <input type="tel" name="txttel" id="txttel" placeholder="Contact Number">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Enter Your Date of Birth
+            </td>
+            <td>
+                <label for="dob">
+                    <input type="date" name="txtdob" id="dob" placeholder="Enter Your Date of Birth" required>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Enter Your Date Time
+            </td>
+            <td>
+                <label for="datetime">
+                    <input type="datetime" name="datetime" id="datetime">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Enter Time
+            </td>
+            <td>
+                <label for="time">
+                    <input type="time" name="time" id="time">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Select Your Gender
+            </td>
+            <td>
+                <label for="radio">
+                    <input type="radio" name="radio" id="radio" value="0" checked>Male
+                    <input type="radio" name="radio" id="radio" value="1">Female
+                    <input type="radio" name="radio" id="radio" value="2">Other
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td> Select Your Hobbies</td>
+            <td>
+                <label for="hobbbies">
+                    <input type="checkbox" name="hobbbies" id="hobbbies" value="0" checked>Listening to Old
+                    Songs</input>
+                    <input type="checkbox" name="hobbbies" id="hobbbies" value="1">Reading</input>
+                    <input type="checkbox" name="hobbbies" id="hobbbies" value="2">Chess</input>
+                    <input type="checkbox" name="hobbbies" id="hobbbies" value="3">Writing</input>
+                    <input type="checkbox" name="hobbbies" id="hobbbies" value="4 ">Travelling</input>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Select Your Country
+            </td>
+            <td>
+                <label for="country">
+                    <select name="country" id="country" value="0">
+                        <option value="0">Select Your Country</option>
+                        <option value="1">Bharat</option>
+                        <option value="2">Pakistan</option>
+                        <option value="3">China</option>
+                        <option value="4">Thailand</option>
+                    </select>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Upload Your Image
+            </td>
+            <td>
+                <label for="image">
+                    <input type="file" name="file" id="image">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>Enter Your Address</td>
+            <td>
+                <label for="">
+                    <textarea name="address" id="address" cols="30" rows="2"></textarea>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="Register" name="" id="">
+            <input type="reset" value="Clear All"></td>
+        </tr>
+
+    </table>
+   </form>
+</body>
+
+</html>

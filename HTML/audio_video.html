@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Use all regional language in page  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- to get size of full device  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- to get availiable size of screen  -->
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Example of audio tag
+    </h1>
+    <hr>
+
+    <!-- list of attributes used in audio tag
+    autoplay
+    controls
+    loop
+    muted
+    preload
+    src -->
+    <audio controls>
+        <source src="path of audio file" type="audio/mpeg">
+    </audio>
+
+    <!-- if audio tag is not supported by browzer -->
+    <audio controls>
+        <source src="path of audio file" type="audio/mpeg"> <embed src="path of audio file" type="application/x-mplayer2">
+    </audio>
+
+    <h1>
+        Example of Video tag
+    </h1>
+    <hr>
+    <video controls poster="path of image (thumbline)" > <source src="path of video file" type="video/mp4"> </video>
+</body>
+
+</html>
