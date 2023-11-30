@@ -26,15 +26,16 @@
         var heightInch = parseFloat(prompt("Enter your Height in inch"));
         console.log("Your weight is " + weight + " Your height in foot is " + heightFoot + " Your height in inch is " + heightInch);
 
-        var totalMeter = (heightFoot / 3.281) + (heightInch / 39.37);
-        var bmi = weight / (totalMeter * totalMeter);
+        var totalMeter = ((heightFoot / 3.281) + (heightInch / 39.37)).toFixed(2);
+        console.log("Total Meter is " + totalMeter);
+        var bmi = (weight / (totalMeter * totalMeter)).toFixed(2);
         console.log(`Your bmi is ${bmi}`);
         var txt = ``;
 
 
         if (bmi < 16) {
             txt = "Your BMI Class is Severe Thinness"
-            document.getElementById("message").innerHTML = `<div class="card text-bg-warning">
+            document.getElementById("message").innerHTML = `<div class="card text-bg-warning mt-5">
                     <div class="card-body text-center">
                         ${txt}
                     </div>
@@ -42,7 +43,7 @@
         }
         else if (bmi >= 16 && bmi < 17) {
             txt = "Your BMI Class is Moderate Thinness"
-            document.getElementById("message").innerHTML = `<div class="card text-bg-warning">
+            document.getElementById("message").innerHTML = `<div class="card text-bg-warning mt-5">
                     <div class="card-body text-center">
                         ${txt}
                     </div>
@@ -50,7 +51,7 @@
         }
         else if (bmi >= 17 && bmi < 18.5) {
             txt = "Your BMI Class is Mild Thinness"
-            document.getElementById("message").innerHTML = `<div class="card text-bg-warning">
+            document.getElementById("message").innerHTML = `<div class="card text-bg-warning mt-5">
                     <div class="card-body text-center">
                         ${txt}
                     </div>
@@ -58,7 +59,7 @@
         }
         else if  (bmi >= 18.5 && bmi < 25) {
             txt = "Your BMI Class is Normal"
-            document.getElementById("message").innerHTML = `<div class="card text-bg-warning">
+            document.getElementById("message").innerHTML = `<div class="card text-bg-warning mt-5">
                     <div class="card-body text-center">
                         ${txt}
                     </div>
@@ -66,7 +67,7 @@
         }
         else if (bmi >= 25 && bmi < 30) {
             txt = "Your BMI Class is Overweight"
-            document.getElementById("message").innerHTML = `<div class="card text-bg-warning">
+            document.getElementById("message").innerHTML = `<div class="card text-bg-warning mt-5">
                     <div class="card-body text-center">
                         ${txt}
                     </div>
@@ -74,7 +75,7 @@
         }
         else if (bmi >= 30 && bmi < 35) {
             txt = "Your BMI Class is Obese class 1"
-            document.getElementById("message").innerHTML = `<div class="card text-bg-warning">
+            document.getElementById("message").innerHTML = `<div class="card text-bg-warning mt-5">
                     <div class="card-body text-center">
                         ${txt}
                     </div>
@@ -82,7 +83,7 @@
         }
         else if  (bmi >= 35 && bmi < 40) {
             txt = "Your BMI Class is Obese class 2"
-            document.getElementById("message").innerHTML = `<div class="card text-bg-warning">
+            document.getElementById("message").innerHTML = `<div class="card text-bg-warning mt-5">
                     <div class="card-body text-center">
                         ${txt}
                     </div>
@@ -90,7 +91,7 @@
         }
         else if (bmi >= 40) {
             txt = "Your BMI Class is Obese class 3"
-            document.getElementById("message").innerHTML = `<div class="card text-bg-warning">
+            document.getElementById("message").innerHTML = `<div class="card text-bg-warning mt-5">
                     <div class="card-body text-center">
                         ${txt}
                     </div>
