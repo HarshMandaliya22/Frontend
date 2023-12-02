@@ -13,7 +13,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-4">
-                <form action="" method="post" onsubmit="return inspectionTeam();">
+                <form action="" method="post" onsubmit="return inspectionTeam()">
                     <div class="card shadow mt-5">
                         <div class="card-header h1 text-center text-bg-danger">
                             Wind Turbine Blade Inspection Team
@@ -36,13 +36,17 @@
                         </div>
                         <div class="card-footer text-center">
                             <button class="btn btn-success " type="submit">Submit</button>
-                            <button class="btn btn-warning " onclick="" type="reset">Clear All</button>
+                            <button class="btn btn-warning " type="reset">Clear All</button>
                         </div>
                     </div>
                 </form>
             </div>
-            <div class="col-4" id="card">
-
+            <div class="col-3" id="message">
+                <!-- <div class="card shadow  my-5">
+                    <div class="card-header">Leading</div>
+                        <div class="card-body">Karan</div>
+                    </div>
+                </div> -->
             </div>
         </div>
 
@@ -56,15 +60,15 @@
         function inspectionTeam() {
             var name = document.getElementById("teamName").value;
             var head = document.getElementById("teamHead").value;
-            alert(" name is " + name + " head is " + head);
-            document.getElementById("card").innerHTML =
+            alert("Side name is " + name + "Side head is " + head);
+            document.getElementById("message").innerHTML +=
                 `<div class="card shadow my-5">
-                    <div class="card-header">${name}</div>
-                        <div class="card-body">${head}</div>
+                    <div class="card-header text-center h3 text-bg-danger ">${name}</div>
+                        <div class="card-body text-center">${head}</div>
                     </div>
                 </div>`
-            document.getElementById("teamName") = "";
-            document.getElementById("teamHead") = "";
+            document.getElementById("teamName").value = "";
+            document.getElementById("teamHead").value = "";
             return false;
         }
     </script>

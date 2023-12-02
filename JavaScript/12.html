@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <form action="" onsubmit="return zodiacSign()">
+                    <div class="card shadow my-5 ">
+                        <div class="card-header text-center text-bg-success h2">
+                            Zodiac Sign
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="dob" class="form-label">Enter your Date of Birth</label>
+                                <input type="number" placeholder="Enter your Date of Birth" name="dob" id="dob" required
+                                    class="form-control">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="dom" class="form-label">Enter your Birth Month</label>
+                                <input type="number" placeholder="Enter your Birth Month" name="dom" id="dom" required
+                                    class="form-control">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="zodiac" class="form-label">Your Zodiac Sign is </label>
+                                <input type="text" placeholder="" name="zodiac" id="zodiac" readonly
+                                    class="form-control">
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-success" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        function zodiacSign() 
+        {
+            let day = parseInt(document.getElementById("dob").value);
+            let month = parseInt(document.getElementById("dom").value);
+            let message = "";
+            console.log("day is " + day + " month is " + month);
+
+            if (month < 13 && month > 0) {
+                if ((month == 4 && day >= 1 && day <= 19) || (month == 3 && day >= 21 && day <= 31)) {
+                    
+                    // alert("hi")
+                    message = "Aries";
+                }
+                else if ((month == 4 && day >= 20 && day <= 30) || (month == 5 && day >= 1 && day <= 20)) {
+                    message = "Taurus";
+                }
+                else if ((month == 5 && day >= 21 && day <= 31) || (month == 6 && day >= 1 && day <= 20)) {
+                    message = "Gemini";
+                }
+                else if ((month == 6 && day >= 21 && day <= 30) || (month == 7 && day >= 1 && day <= 22)) {
+                    message = "Cancer";
+                }
+                else if ((month == 7 && day >= 23 && day <= 31) || (month == 8 && day >= 1 && day <= 22)) {
+                    message = "Leo";
+
+                }
+                else if ((month == 8 && day >= 23 && day <= 31) || (month == 9 && day >= 1 && day <= 22)) {
+                    message = "Virgo";
+
+                }
+                else if ((month == 9 && day >= 23 && day <= 30) || (month == 10 && day >= 1 && day <= 22)) {
+                    message = "Libra";
+
+                }
+                else if ((month == 10 && day >= 23 && day <= 31) || (month == 11 && day >= 1 && day <= 21)) {
+                    message = "Scorpio";
+
+
+                }
+                else if ((month == 11 && day >= 22 && day <= 30) || (month == 12 && day >= 1 && day <= 21)) {
+                    message = "Sagittarius";
+
+                }
+                else if ((month == 12 && day >= 22 && day <= 31) || (month == 1 && day >= 1 && day <= 19)) {
+                    message = "Capricorn";
+
+                }
+                else if ((month == 1 && day >= 20 && day <= 31) || (month == 2 && day >= 1 && day <= 18)) {
+                    message = "Aquarius";
+
+                }
+                else if ((month == 2 && day >= 19 && day <= 29) || (month == 3 && day >= 1 && day <= 20)) {
+                    message = "Pisces";
+
+                }
+                document.getElementById("zodiac").value = message;
+            }
+
+            else {
+                alert("Please Enter valid Day and Month");
+            }
+            return false;
+        }
+            
+    </script>
+</body>
+
+</html>
