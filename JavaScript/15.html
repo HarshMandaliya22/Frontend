@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Multiplication Table</title>
+</head>
+
+<body>
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-lg-6 col-sm-6 offset-sm-3 offset-lg-3 col-12 ">
+                <form action="" onsubmit="return generateTable();">
+                    <div class="card">
+                        <div class="card-header h2 text-bg-warning">Multiplication Table</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="start" class="form-label">
+                                    Starting Number
+                                </label>
+                                <input type="number" name="start" class="form-control" id="start" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="end" class="form-label">
+                                    Ending Number
+                                </label>
+                                <input type="number" name="end" class="form-control" id="end" required>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-warning" type="submit">Generate Multiplication Table</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 my-4" id="output">
+                     
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        function generateTable() {
+            let start = parseInt(document.getElementById("start").value);
+            let end = parseInt(document.getElementById("end").value);
+            console.log(start, end);
+            let message = "";
+            let count = 1;
+            for (start = parseInt(document.getElementById("start").value); start <= end; start++) {
+                for (count = 1; count <= 10; count++) {
+                    let result = start * count;
+                    message += `<p>${start} × ${count} = ${result}</p>`
+                }
+                // for (count = 1; count <= 10; count++) {
+                //     let result = end * count;
+                //     message += `<p>${end} × ${count} = ${result}</p>`
+                // }
+            }
+            document.getElementById("output").innerHTML = `
+                    <div class="card text-center text-bg-success">
+                        <div class="card-body" >
+                            ${message}
+                        </div>
+                    </div>`
+
+            document.getElementById("start").value = "";
+            document.getElementById("end").value = "";
+            return false
+        }
+
+    </script>
+</body>
+
+</html>
