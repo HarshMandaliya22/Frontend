@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <form class="row row-cols-lg-auto g-3 align-items-center" onsubmit="return calendar();">
+                <div class="col-12">
+                    <div class="card text-center">
+                        <div class="card-header h2 text-bg-primary">Calendar</div>
+                        <div class="card-body">
+                            <select class="form-select" id="month">
+                                <option selected>Select Month</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12">
+                <table width="100%" class="table table-bordered  table-stripped">
+                    <thead id="output">
+
+                    </thead>
+                    <tbody id="outputDays">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function calendar() {
+            // alert("hi");
+            document.getElementById("output").innerHTML = `
+                        <tr>
+                            <td class="text-center">Sunday</td>
+                            <td class="text-center">Monday</td>
+                            <td class="text-center">Tuesday</td>
+                            <td class="text-center">Wednesday</td>
+                            <td class="text-center">Thursday</td>
+                            <td class="text-center">Friday</td>
+                            <td class="text-center">Saturday</td>
+                        </tr>`;
+            let month = document.getElementById("month").value;
+            let days = 0;
+            let weeks = 0;
+            let message = "";
+
+            // alert(month);
+            if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+                days = 31
+                // alert(days);
+                message += `<tr>`
+                for (days = 0; days < 31; days++) {
+                    message += `<td class="text-center">${days+1}</td>`
+                }
+                message += `</tr >`
+            }
+            else if (month == 2) {
+                days = 28
+                // alert(days);
+            }
+            else if (month == 4 || month == 6 || month == 9 || month == 11)
+            {
+                days = 30
+                // alert(days);        
+            }
+            document.getElementById("outputDays").innerHTML += message;
+            return false;
+        }
+    </script>
+</body>
+
+
+</html>
