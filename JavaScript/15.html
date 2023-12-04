@@ -36,9 +36,22 @@
                 </form>
             </div>
         </div>
+
         <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-12 my-4" id="output">
-                     
+            <div class="col-xl-3 col-sm-12 col-md-6 col-lg-4 my-5" id="output">
+                <!-- <div class="card">
+                    <div class="card-header text-center text-bg-success">
+                        Table Of ${start}
+                    </div>
+                    <div class="card-body text-center">
+                        ${message}
+                        <p>${start} × ${count} = ${result}</p>
+                        <p>${start} × ${count} = ${result}</p>
+                        <p>${start} × ${count} = ${result}</p>
+                        <p>${start} × ${count} = ${result}</p>
+                        <p>${start} × ${count} = ${result}</p>
+                    </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -53,6 +66,12 @@
             let message = "";
             let count = 1;
             for (start = parseInt(document.getElementById("start").value); start <= end; start++) {
+                message += `
+               <div class="card">
+                    <div class="card-header text-center text-bg-success">
+                        Table Of ${start}
+                    </div>
+                  `
                 for (count = 1; count <= 10; count++) {
                     let result = start * count;
                     message += `<p>${start} × ${count} = ${result}</p>`
@@ -62,13 +81,11 @@
                 //     message += `<p>${end} × ${count} = ${result}</p>`
                 // }
             }
-            document.getElementById("output").innerHTML = `
-                    <div class="card text-center text-bg-success">
-                        <div class="card-body" >
+            document.getElementById("output").innerHTML += `
+                        <div class="card-body text-center">
                             ${message}
                         </div>
-                    </div>`
-
+                </div>`
             document.getElementById("start").value = "";
             document.getElementById("end").value = "";
             return false

@@ -41,14 +41,17 @@
                     </div>
                 </form>
             </div>
-            <div class="col-3" id="message">
-                <!-- <div class="card shadow  my-5">
-                    <div class="card-header">Leading</div>
+            <div class="col-8">
+                <div class="row" id="message">
+                    <!-- <div class="card shadow  my-5">
+                        <div class="card-header">Leading</div>
                         <div class="card-body">Karan</div>
-                    </div>
-                </div> -->
+                    </div> -->
+                </div>
             </div>
+
         </div>
+    </div>
 
     </div>
 
@@ -61,12 +64,14 @@
             var name = document.getElementById("teamName").value;
             var head = document.getElementById("teamHead").value;
             alert("Side name is " + name + "Side head is " + head);
-            document.getElementById("message").innerHTML +=
-                `<div class="card shadow my-5">
-                    <div class="card-header text-center h3 text-bg-danger ">${name}</div>
-                        <div class="card-body text-center">${head}</div>
-                    </div>
-                </div>`
+            document.getElementById("message").innerHTML += `
+                    <div class="col-2 ">
+                        <div class="card shadow my-5">
+                            <div class="card-header text-center h3 text-bg-danger ">${name}</div>
+                                <div class="card-body text-center">${head}</div>
+                            </div>
+                        </div>
+                    </div>`
             document.getElementById("teamName").value = "";
             document.getElementById("teamHead").value = "";
             return false;
