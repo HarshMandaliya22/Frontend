@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<style>
+    @media print {
+        .hide-in-print {
+            display: none;
+        }
+    }
+
+    table {
+        width: 60%;
+        border-collapse: collapse;
+        margin: auto;
+    }
+
+    th,
+    td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<body>
+    <h1>Student Information</h1>
+    <p align="right">
+        <button class="hide-in-print" type="button" id="print" onclick="PrintPage();">Print</button>
+    </p>
+    <table align="center" border="2">
+        <tr>
+            <th>Name</th>
+            <td>John Doe</td>
+        </tr>
+        <tr>
+            <th>Roll Number</th>
+            <td>123456</td>
+        </tr>
+        <tr>
+            <th>Standard</th>
+            <td>10th</td>
+        </tr>
+        <tr>
+            <th>Division</th>
+            <td>A</td>
+        </tr>
+        <tr>
+            <th>Current Date</th>
+            <td id="currentDate"></td>
+        </tr>
+        <tr>
+            <th>Subject Marks</th>
+            <td>
+                <table border="1">
+                    <tr>
+                        <td>90</td>
+                        <td>85</td>
+                        <td>92</td>
+                        <td>78</td>
+                        <td>88</td>
+                        <td>95</td>
+                        <td>80</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td id="total">450</td>
+        </tr>
+        <tr>
+            <th>Average</th>
+            <td id="average">75</td>
+        </tr>
+        <tr>
+            <th>Grade</th>
+            <td id="grade">A+</td>
+        </tr>
+    </table>
+    <script>
+        //get current date
+        var currentDate = new Date();
+        document.getElementById('currentDate').innerHTML = currentDate.toDateString(); 
+        // document.getElementById('currentDate').innerHTML = currentDate.toLocaleDateString(); 
+        // from above line we can get current date in 12/15/2023 formate
+
+        let PrintPage = function(){
+            window.print();
+        }//this is second method for creating function
+    </script>
+</body>
+
+</html>

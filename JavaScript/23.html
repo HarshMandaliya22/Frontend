@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-1</title>
+</head>
+
+<body>
+    <h1>First Method of creating Object</h1>
+    <hr>
+    <b>open Console (press ctrl+shift+k)</b>
+    <script>
+        //1st method of creating object
+        var marks = {
+            //property variables
+            num1: 0,
+            num2: 0,
+            //methods
+            add: function () {
+                let result = this.num1 + this.num2;
+                console.log("Addition is ", result);
+            },
+            sub: function () {
+                let result = this.num1 - this.num2;
+                console.log("Subtraction is ", result);
+            },
+            multi: function () {
+                let result = this.num1 * this.num2;
+                console.log("Multiplication is ",result);
+            }
+        }
+        //set properties values
+        marks.num1=10;
+        marks.num2=5;
+        //calling method
+        marks.add();
+        marks.sub();
+        marks.multi();
+    </script>
+</body>
+
+</html>

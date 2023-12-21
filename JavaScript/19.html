@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    table {
+        width: 50%;
+        border-collapse: collapse;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    button {
+        padding: 10px;
+        background-color: #4CAF50;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<body>
+    <h2 align="center">Input Dimensions</h2>
+    <form action="">
+        <table border="2" cellpadding="10" align="center">
+            <tr>
+                <td>Length</td>
+                <td><input required type="number" id="length" placeholder="Enter length" /></td>
+            </tr>
+            <tr>
+                <td>Width:</td>
+                <td><input required type="number" id="width" placeholder="Enter width" /></td>
+            </tr>
+            <tr>
+                <td>Depth:</td>
+                <td><input required type="number" id="depth" placeholder="Enter depth" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="button" onclick="calculateVolume()">Calculate Volume</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <h3 id="display"></h3>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script src="common.js"></script>
+    <script>
+        //2nd method of creating function
+        let getVolume = function (length, width = 1, depth = 1) {
+            let volume = length * width * depth;
+            return volume;
+        }
+        //3rd method of creating function
+        let calculateVolume = () => {
+            // alert("hey bro")
+            let length = h("length").value;
+            let width = h("width").value;
+            let depth = h("depth").value;
+            log(length, width, depth);
+            log(length, width);
+            log(length);
+            if (length != '' && width != '' && depth != '') {
+                length = int(length);
+                width = int(width);
+                depth = int(depth);
+                h("display").innerHTML = getVolume(length, width, depth);
+            }
+            else if (length != '' && width != '') {
+                length = int(length);
+                width = int(width);
+                h("display").innerHTML = getVolume(length, width);
+            }
+            else if (length != '') {
+                length = int(length);
+                h("display").innerHTML = getVolume(length);
+            }
+            else {
+                h("display").innerHTML = 'at least give one input';
+            }
+        }
+    </script>
+</body>
+
+</html>

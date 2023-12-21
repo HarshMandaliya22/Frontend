@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Points</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div align="center">
+        <button type="button" id="click" class="btn mt-5 btn-danger"><h4>Click here to See the Point Table of
+            IPL-2023</h4></button>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <table class="table mt-3 text-center  table-bordered table-striped" id="output">
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        let score = document.getElementById("click");
+        // console.log(score);
+        let size = score.length
+        score.onclick = function () {
+            // alert("hi");
+            let points = document.getElementById("output");
+            let message = `
+            <thead>
+                        <td class="text-bg-warning" width="50%">Team</td>
+                        <td class="text-bg-warning" width="10%">Matches</td>
+                        <td class="text-bg-warning" width="10%">Win</td>
+                        <td class="text-bg-warning" width="10%">Loss</td>
+                        <td class="text-bg-warning" width="10%">NRR</td>
+                        <td class="text-bg-warning" width="10%">Points</td>
+                    </thead>`
+            document.getElementById("output").innerHTML = message
+
+            var Ipl = new Object({
+                team: "",
+                matches: 0,
+                win: 0,
+                loss: 0,
+                nrr :"",
+                points: 0,
+                display: function () {
+                    let abc = `
+                    <tr>
+                        <td class="text-bg-success">${this.team}</td>
+                        <td class="text-bg-success">${this.matches}</td>
+                        <td class="text-bg-success">${this.win}</td>
+                        <td class="text-bg-success">${this.loss}</td>
+                        <td class="text-bg-success">${this.nrr}</td>
+                        <td class="text-bg-success">${this.points}</td>
+                    </tr>`
+                    document.getElementById("output").innerHTML += abc
+                }
+            })
+            var team1 = Ipl;
+            team1.team = "Gujarat Titans";
+            team1.matches = 14;
+            team1.win = 10;
+            team1.loss = 4;
+            team1.nrr = "+0.809";
+            team1.points = 20;
+            team1.display();
+
+            var team2 = Ipl;
+            team2.team = "Chennai Super Kings"
+            team2.matches = 14;
+            team2.win = 8;
+            team2.loss = 5;
+            team2.nrr = "+0.652";
+            team2.points = 17;
+            team2.display();
+            
+            var team3 = Ipl;
+            team3.team = "Lucknow Super Giants"
+            team3.matches = 14;
+            team3.win = 8;
+            team3.loss = 5;
+            team3.nrr = "+0.284";
+            team3.points = 17;
+            team3.display();
+            
+            var team4 = Ipl;
+            team4.team = "Mumbai Indians"
+            team4.matches = 14;
+            team4.win = 8;
+            team4.loss = 6;
+            team4.nrr = "-0.044";
+            team4.points = 16;
+            team4.display();
+            
+            var team5 = Ipl;
+            team5.team = "Rajasthan Royals"
+            team5.matches = 14;
+            team5.win = 7;
+            team5.loss = 7;
+            team5.nrr = "+0.148";
+            team5.points = 14;
+            team5.display();
+            
+            var team6 = Ipl;
+            team6.team = "Royal Challengers Bangalore"
+            team6.matches = 14;
+            team6.win = 7;
+            team6.loss = 7;
+            team6.nrr = "+0.135";
+            team6.points = 14;
+            team6.display();
+            
+            var team7 = Ipl;
+            team7.team = "Kolkata Knight Riders"
+            team7.matches = 14;
+            team7.win = 6;
+            team7.loss = 8;
+            team7.nrr = "-0.239";
+            team7.points = 12;
+            team7.display();
+            
+            var team8 = Ipl;
+            team8.team = "Punjab Kings  "
+            team8.matches = 14;
+            team8.win = 6;
+            team8.loss = 8;
+            team8.nrr = "-0.304";
+            team8.points = 12;
+            team8.display();
+            
+            var team9 = Ipl;
+            team9.team = "Delhi Capitals"
+            team9.matches = 14;
+            team9.win = 5;
+            team9.loss = 9;
+            team9.nrr = "-0.808";
+            team9.points = 10;
+            team9.display();
+            
+            var team10 = Ipl;
+            team10.team = "Sunrisers Hyderabad"
+            team10.matches = 14;
+            team10.win = 4;
+            team10.loss = 10;
+            team10.nrr = "-0.590";
+            team10.points = 8;
+            team10.display();
+
+        }
+    </script>
+</body>
+
+</html>

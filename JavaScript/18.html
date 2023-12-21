@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Redirect</title>
+</head>
+
+<body>
+    <form action="">
+        <table border="2" align="center" cellpadding="10">
+            <tr>
+                <td>Enter Website Name</td>
+                <td><input type="text" id="sitename" placeholder="Enter Website Name" required></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2">
+                    <input type="button" name="redirect" id="redirect" onclick="RedirectToSite();" value="Go to Site">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        //3rd method of creating function
+        let RedirectToSite = () =>{
+            var sitename = document.getElementById("sitename").value;
+            if (sitename === '')
+            {
+                alert("sitename must not be empty");
+            }
+            else
+            {
+                window.location = sitename;
+            }
+        }
+    </script>
+</body>
+
+</html>

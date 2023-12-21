@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    td {
+        text-align: center;
+    }
+    img {
+            transition: all 0.3 s ease; /* Smooth transition for all properties over 0.3 seconds */
+        }
+
+    .zoom-in {
+        height: 250px;
+        width: 250px;
+        box-shadow: 5px 5px 5px #bbbbbb;
+    
+    }
+
+    .zoom-out {
+        height: 200px;
+        width: 200px;
+        box-shadow: none;
+        
+    }
+</style>
+<body>
+    <table border="1" cellpadding="10" width="100%">
+        <tr>
+            <td><img id="1" src="http://picsum.photos/200?random=1" alt=""></td>
+            <td><img id="2" src="http://picsum.photos/200?random=2" alt=""></td>
+            <td><img id="3" src="http://picsum.photos/200?random=3" alt=""></td>
+        </tr>
+        <tr>
+            <td><img id="4" src="http://picsum.photos/200?random=4" alt=""></td>
+            <td><img id="5" src="http://picsum.photos/200?random=5" alt=""></td>
+            <td><img id="6" src="http://picsum.photos/200?random=6" alt=""></td>
+        </tr>
+        <tr>
+            <td><img id="7" src="http://picsum.photos/200?random=7" alt=""></td>
+            <td><img id="8" src="http://picsum.photos/200?random=8" alt=""></td>
+            <td><img id="9" src="http://picsum.photos/200?random=9" alt=""></td>
+        </tr>
+    </table>
+</body>
+<script>
+    //2nd way of handling event (DOM level 0 event handlers)
+    let img = document.getElementsByTagName("img");
+    console.log(img);
+    let size = img.length //return the size of array
+    for (let index = 0; index < size; index++){
+        img[index].onmouseover = function(){
+            this.classList.add("zoom-in");
+            this.classList.remove("zoom-out");
+
+        }
+        img[index].onmouseout = function(){
+            this.classList.add("zoom-out") 
+            this.classList.remove("zoom-in") 
+        }
+    }
+</script>
+
+</html>

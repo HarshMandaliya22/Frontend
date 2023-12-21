@@ -37,9 +37,8 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-xl-3 col-sm-12 col-md-6 col-lg-4 mt-3" id="output">
-                <!-- <div class="card">
+        <div class="row" id="output">
+            <!-- <div class="card">
                     <div class="card-header text-center text-bg-success">
                         Table Of ${start}
                     </div>
@@ -52,42 +51,51 @@
                         <p>${start} × ${count} = ${result}</p>
                     </div>
                 </div> -->
-            </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-
+          function $(TagsId){
+            let callId = document.getElementById(TagsId);
+            return callId;
+          }
         function generateTable() {
-            let start = parseInt(document.getElementById("start").value);
-            let end = parseInt(document.getElementById("end").value);
+            let start = parseInt($("start").value);
+            let end = parseInt($("end").value);
             console.log(start, end);
             let message = "";
             let count = 1;
-            for (start = parseInt(document.getElementById("start").value); start <= end; start++) {
+            let content = '';
+            let i = start;
+            for (i = start; i <= end; i++) {
+                content = ``;
                 message += `
+            <div class="col-xl-3 col-sm-12 col-md-6 col-lg-4 mt-3">
                <div class="card">
-                    <div class="card-header text-center text-bg-success">
-                        Table Of ${start}
+                    <div class="card-header h4 text-center text-danger">
+                        Multiplication Table of ${i}
                     </div>
                   `
                 for (count = 1; count <= 10; count++) {
-                    let result = start * count;
-                    message += `<p>${start} × ${count} = ${result}</p>`
+                    let result = i * count;
+                    content += `<p>${i} × ${count} = ${result}</p>`
                 }
+                message += `
+                        <div class="card-body text-center">
+                            ${content}
+                        </div>
+                        </div>
+                </div>`
                 // for (count = 1; count <= 10; count++) {
                 //     let result = end * count;
                 //     message += `<p>${end} × ${count} = ${result}</p>`
                 // }
             }
-            document.getElementById("output").innerHTML += `
-                        <div class="card-body text-center">
-                            ${message}
-                        </div>
-                </div>`
-            document.getElementById("start").value = "";
-            document.getElementById("end").value = "";
+            $("output").innerHTML += message
+            console.log(message);
+            $("start").value = "";
+            $("end").value = "";
             return false
         }
 
