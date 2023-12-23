@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+
+<body>
+    <!-- create class meter which has gtMeter which return meter of inches given in constructor. extends this class in KM. which has method getKM that returns km of inches given in constructor. extends KM class in Mile class which has method getMile that return miles of inches given in constructor -->
+    <h1>Multilevel Inheritance</h1>
+    <hr>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+    <script>
+        class Meter {
+            constructor(inches) {
+                this.inches = inches;
+            }
+            getMeter() {
+                let temp = this.inches / 39.37007874;
+                return temp.toFixed(2);
+            }
+        }
+        class Kilometer extends Meter {
+            constructor(inches) {
+                super(inches);
+            }
+            getKilometer() {
+                let temp = super.getMeter(this.inches) / 1000
+                return temp.toFixed(4);
+            }
+        }
+        class Mile extends Kilometer {
+            constructor(inches) {
+                super(inches);
+            }
+            getMile() {
+                let temp = super.getKilometer(this.inches) / 1.60934;
+                return temp.toFixed(4);
+            }
+        }
+
+        //create object 
+        let inches = parseInt(prompt("Enter the inches"));
+        let m1 = new Mile(inches)
+        let meter = m1.getMeter();
+        let kilometer = m1.getKilometer();
+        let mile = m1.getMile();
+        document.getElementById("output1").innerHTML = `Meter = ${meter}`
+        document.getElementById("output2").innerHTML = `Kilometer = ${kilometer}`
+        document.getElementById("output3").innerHTML = `Mile = ${mile}`
+    </script>
+</body>
+
+</html>
