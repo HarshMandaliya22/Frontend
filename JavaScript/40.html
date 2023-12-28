@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Spread Operator</title>
+</head>
+<body>
+    <h1>Open Console</h1>
+    <script>
+        var object1 = {
+            name : "Jignesh",
+            surname : "Mehta",
+            study : "IT"
+        };
+        var object2 = {
+            age : 20,
+            place : "Bhavnagar",
+            mobile : 89898989898
+        };
+        var object3 = {...object1,...object2};
+        console.log(object3);
+
+        let num1 = [2,5,8,12];
+        let num2 = [1,3,4,6,7];
+        let num3 =[...num1,...num2];
+        console.log(num3);
+
+        // if there is same property in other object/array then in ES6 Spread Operator updated proerty will overwrite eg...
+        var object4 = {
+            name : "Jignesh",
+            surname : "Mehta",
+            study : "IT"
+        };
+        var object5 = {
+            name: "Kiran",
+            place : "Bhavnagar",
+            mobile : 89898989898
+        };
+        // here name is also in object 2, so if we combine object 1 and 2 then "Kiran" will be displayed not "Jignesh"
+        var object6 = {...object4,...object5};
+        console.log(object6);
+    </script>
+</body>
+</html>
