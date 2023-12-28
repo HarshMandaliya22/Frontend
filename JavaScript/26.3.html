@@ -102,16 +102,38 @@
             console.log(name, price, quantity);
             let i1 = new Item(name, price, quantity);
             i1.display();
-            h("name").value= "";
-            h("price").value= "";
-            h("quantity").value= "";
-            h("total").value= "";
+            h("name").value = "";
+            h("price").value = "";
+            h("quantity").value = "";
+            h("total").value = "";
             h("name").focus();
             return false
         }
 
+        let EditItem = function (EditButton) {
+            let row = EditButton.parentNode.parentNode;
+            let name = row.children[0].innerHTML;
+            let price = row.children[1].innerHTML;
+            let quantity = row.children[2].innerHTML;
+
+            // Update form fields with the selected row's values
+            h("name").value = name;
+            h("price").value = price;
+            h("quantity").value = quantity;
+            h("total").value = price * quantity; // You may need to recalculate the total
+
+            // Remove the row from the table
+            row.remove();
+
+            // Update global variables and display
+            BillTotal -= parseInt(price * quantity);
+            ItemCount--;
+            h("count").innerHTML = ItemCount;
+            h("billtotal").innerHTML = BillTotal;
+        }
+
         let DeleteItem = function (DeleteButton) {
-            let total =DeleteButton.parentNode.parentNode.children[3].innerHTML;
+            let total = DeleteButton.parentNode.parentNode.children[3].innerHTML;
             // alert(total);
             BillTotal -= parseInt(total);
             ItemCount--;
@@ -140,7 +162,11 @@
                                     <td>${this.price}</td>
                                     <td>${this.quantity}</td>
                                     <td>${this.total}</td>
-                                    <td><button onclick='DeleteItem(this);' type='button' class='btn btn-danger'>Delete</button></td>
+                                    <td>
+                                        <button onclick='EditItem(this);' type='button' class='btn btn-warning'>Edit</button>
+                                        
+                                        <button onclick='DeleteItem(this);' type='button' class='btn btn-danger'>Delete</button>
+                                    </td>
                             </tr>`;
                 document.getElementById("output").innerHTML += temp;
             }
