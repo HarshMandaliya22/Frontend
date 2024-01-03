@@ -9,25 +9,30 @@
 <style>
     td {
         text-align: center;
+        overflow: hidden;
+        height: 300px;
+        width: 300px;
     }
-    img {
-            transition: all 0.3 s ease; /* Smooth transition for all properties over 0.3 seconds */
-        }
 
     .zoom-in {
-        height: 250px;
-        width: 250px;
         box-shadow: 5px 5px 5px #bbbbbb;
-    
+        transition: transform 0.7s ease;
+        transform-origin: center center;
+        /* Set the transformation origin to the center */
+        transform: scale(1.50);
+        /* Zoom in by 50% */
+
     }
 
     .zoom-out {
-        height: 200px;
-        width: 200px;
         box-shadow: none;
-        
+        transition: transform 0.7s ease;
+        transform-origin: center center;
+        /* Set the transformation origin to the center */
+        transform: scale(1);
     }
 </style>
+
 <body>
     <table border="1" cellpadding="10" width="100%">
         <tr>
@@ -52,15 +57,15 @@
     let img = document.getElementsByTagName("img");
     console.log(img);
     let size = img.length //return the size of array
-    for (let index = 0; index < size; index++){
-        img[index].onmouseover = function(){
+    for (let index = 0; index < size; index++) {
+        img[index].onmouseover = function () {
             this.classList.add("zoom-in");
             this.classList.remove("zoom-out");
 
         }
-        img[index].onmouseout = function(){
-            this.classList.add("zoom-out") 
-            this.classList.remove("zoom-in") 
+        img[index].onmouseout = function () {
+            this.classList.add("zoom-out")
+            this.classList.remove("zoom-in")
         }
     }
 </script>
