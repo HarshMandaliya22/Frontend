@@ -8,58 +8,39 @@
 </head>
 
 <body>
-    <h1>Hybrid Inheritance</h1>
+    <!-- create class KG which return Kilogram of grams given in constructor and it has method getKG which return KG. extends this class in Ton. which has method getTon that returns ton of grams given in constructor. -->
+    <h1>Multilevel Inheritance</h1>
     <hr>
     <p id="output1"></p>
-    
+    <p id="output2"></p>
     <script>
-        class MyMath {
-            getpi() {
-                return 3.14;
+        
+        class KG {
+            constructor(gm) {
+                this.gm = gm;
+                console.log("GM class constructor is called....");
             }
-            getsquare(number) {
-                let temp = number * number;
-                return temp;
-            }
-        }
-        class Circle extends MyMath {
-            constructor(radius) {
-                super();
-                this.radius = radius;
-            }
-            getArea() {
-                let temp = super.getpi() * super.getsquare(this.radius);
-                return temp;
+            getKG() {
+                let kg = this.gm / 1000;
+                return kg;
             }
         }
-        class Cyliender extends MyMath {
-            constructor(radius, height) {
-                super();
-                this.radius = radius;
-                this.height = height;
+        class TON extends KG {
+            constructor(gm) {
+                super(gm);
+                console.log("TON class constructor is called.....");
             }
-            getSurfaceArea() {
-                //2pirh + 2pirr
-                let surfaceArea = (2 * super.getPI() * this.radius * this.height) + (2 * super.getPI() * super.getSquare(this.radius));
-                return surfaceArea;
-
+            getTON() {
+                let ton = super.getKG() / 1000;
+                return ton;
             }
         }
-        class Sphere extends Circle {
-            constructor(radius) {
-                super();
-                this.radius = radius
-            }
-            getSphereArea() {
-                let temp = 4 * super.getArea(this.radius);
-                return temp;
-            }
-        }
-        // create object
-        let radius = parseInt(prompt("Enter the value of radius"));
-        let s1 = new Sphere(radius);
-        var sphereArea = s1.getSphereArea();
-        document.getElementById("output1").innerHTML = `Area of Sphere is ${sphereArea}`
+        let gm = parseInt(prompt("Enter the grams"));
+        let k1 = new TON(gm);
+        let kilogram = k1.getKG();
+        let tons = k1.getTON();
+        document.getElementById("output1").innerHTML = `KG = ${kilogram} `
+        document.getElementById("output2").innerHTML = `TON = ${tons} `
     </script>
 </body>
 
