@@ -1,75 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inheritance</title>
 </head>
-
 <body>
-    <h1>Multilevel Inheritance</h1>
+    <h1>Single level Inheritance</h1>
     <hr>
     <p id="output1"></p>
     <p id="output2"></p>
-    <p id="output3"></p>
-    <p id="output4"></p>
     <script>
         
-        //Multilevel inheritance
-        class KB {
-            constructor(bytes) {
-                this.bytes = bytes;
-                console.log("KB class constructor is called....");
-            }
-            getKB() {
-                let temp = this.bytes / 1024;
-                return temp.toFixed(2);
-            }
+     //single level inheritance
+     class KB
+     {
+        constructor(bytes)
+        {
+            this.bytes = bytes;
+            console.log("KB class constructor is called....")
         }
-        class MB extends KB {
-            constructor(bytes) {
-                super(bytes);
-                console.log("MB class constructor is called....");
-            }
-            getMB() {
-                let temp = super.getKB() / 1024;
-                return temp.toFixed(2);
-            }
+        getKB()
+        {
+            let temp = this.bytes / 1024;
+            return temp;
         }
-        class GB extends MB {
-            constructor(bytes) {
-                super(bytes);
-                console.log("GB class constructor is called....");
-            }
-            getGB() {
-                let temp = super.getMB() / 1024;
-                return temp.toFixed(2);
-            }
+     }
+     class MB extends KB
+     {
+        constructor(bytes)
+        {
+            super(bytes);
+            console.log("MB class constructor is called....")
         }
-        class TB extends GB {
-            constructor(bytes) {
-                super(bytes);
-                console.log("TB class constructor is called....");
-            }
-            getTB() {
-                let temp = super.getGB() / 1024;
-                return temp.toFixed(2);
-            }
+        getMB()
+        {
+            let temp = super.getKB() / 1024;
+            return temp;
         }
-        let bytes = parseInt(prompt("Enter bytes"));
-        // create MB class object
-        // let object-name = new classname()
-        let t1 = new TB(bytes);
-        let kilobytes = t1.getKB();
-        let megabytes = t1.getMB();
-        let gegabytes = t1.getGB();
-        let terabytes = t1.getTB();
-        document.getElementById("output1").innerHTML = `KB = ${kilobytes}`
-        document.getElementById("output2").innerHTML = `MB = ${megabytes}`
-        document.getElementById("output3").innerHTML = `GB = ${gegabytes}`
-        document.getElementById("output4").innerHTML = `TB = ${terabytes}`
+     }
+     let bytes = parseInt(prompt("Enter bytes"));
+     //create MB class object
+     let m1 = new MB(bytes);
+     let kilobytes = m1.getKB();
+     let megabytes = m1.getMB();
+     document.getElementById("output1").innerHTML = `KB = ${kilobytes}`
+     document.getElementById("output2").innerHTML = `MB = ${megabytes}`
     </script>
 </body>
-
 </html>
