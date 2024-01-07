@@ -8,39 +8,67 @@
 </head>
 
 <body>
-    <!-- create class KG which return Kilogram of grams given in constructor and it has method getKG which return KG. extends this class in Ton. which has method getTon that returns ton of grams given in constructor. -->
     <h1>Multilevel Inheritance</h1>
     <hr>
     <p id="output1"></p>
     <p id="output2"></p>
+    <p id="output3"></p>
+    <p id="output4"></p>
     <script>
         
-        class KG {
-            constructor(gm) {
-                this.gm = gm;
-                console.log("GM class constructor is called....");
+        //Multilevel inheritance
+        class KB {
+            constructor(bytes) {
+                this.bytes = bytes;
+                console.log("KB class constructor is called....");
             }
-            getKG() {
-                let kg = this.gm / 1000;
-                return kg;
-            }
-        }
-        class TON extends KG {
-            constructor(gm) {
-                super(gm);
-                console.log("TON class constructor is called.....");
-            }
-            getTON() {
-                let ton = super.getKG() / 1000;
-                return ton;
+            getKB() {
+                let temp = this.bytes / 1024;
+                return temp.toFixed(2);
             }
         }
-        let gm = parseInt(prompt("Enter the grams"));
-        let k1 = new TON(gm);
-        let kilogram = k1.getKG();
-        let tons = k1.getTON();
-        document.getElementById("output1").innerHTML = `KG = ${kilogram} `
-        document.getElementById("output2").innerHTML = `TON = ${tons} `
+        class MB extends KB {
+            constructor(bytes) {
+                super(bytes);
+                console.log("MB class constructor is called....");
+            }
+            getMB() {
+                let temp = super.getKB() / 1024;
+                return temp.toFixed(2);
+            }
+        }
+        class GB extends MB {
+            constructor(bytes) {
+                super(bytes);
+                console.log("GB class constructor is called....");
+            }
+            getGB() {
+                let temp = super.getMB() / 1024;
+                return temp.toFixed(2);
+            }
+        }
+        class TB extends GB {
+            constructor(bytes) {
+                super(bytes);
+                console.log("TB class constructor is called....");
+            }
+            getTB() {
+                let temp = super.getGB() / 1024;
+                return temp.toFixed(2);
+            }
+        }
+        let bytes = parseInt(prompt("Enter bytes"));
+        // create MB class object
+        // let object-name = new classname()
+        let t1 = new TB(bytes);
+        let kilobytes = t1.getKB();
+        let megabytes = t1.getMB();
+        let gegabytes = t1.getGB();
+        let terabytes = t1.getTB();
+        document.getElementById("output1").innerHTML = `KB = ${kilobytes}`
+        document.getElementById("output2").innerHTML = `MB = ${megabytes}`
+        document.getElementById("output3").innerHTML = `GB = ${gegabytes}`
+        document.getElementById("output4").innerHTML = `TB = ${terabytes}`
     </script>
 </body>
 
