@@ -8,49 +8,58 @@
 </head>
 
 <body>
-    <!-- create class meter which has gtMeter which return meter of inches given in constructor. extends this class in KM. which has method getKM that returns km of inches given in constructor. extends KM class in Mile class which has method getMile that return miles of inches given in constructor -->
-    <h1>Multilevel Inheritance</h1>
+    <h1>Hybrid Inheritance</h1>
     <hr>
     <p id="output1"></p>
-    <p id="output2"></p>
-    <p id="output3"></p>
+    
     <script>
-        class Meter {
-            constructor(inches) {
-                this.inches = inches;
+        class MyMath {
+            getpi() {
+                return 3.14;
             }
-            getMeter() {
-                let temp = this.inches / 39.37007874;
-                return temp.toFixed(2);
-            }
-        }
-        class Kilometer extends Meter {
-            constructor(inches) {
-                super(inches);
-            }
-            getKilometer() {
-                let temp = super.getMeter(this.inches) / 1000
-                return temp.toFixed(4);
+            getsquare(number) {
+                let temp = number * number;
+                return temp;
             }
         }
-        class Mile extends Kilometer {
-            constructor(inches) {
-                super(inches);
+        class Circle extends MyMath {
+            constructor(radius) {
+                super();
+                this.radius = radius;
             }
-            getMile() {
-                let temp = super.getKilometer(this.inches) / 1.60934;
-                return temp.toFixed(4);
+            getArea() {
+                let temp = super.getpi() * super.getsquare(this.radius);
+                return temp;
             }
         }
-        //create object 
-        let inches = parseInt(prompt("Enter the inches"));
-        let m1 = new Mile(inches)
-        let meter = m1.getMeter();
-        let kilometer = m1.getKilometer();
-        let mile = m1.getMile();
-        document.getElementById("output1").innerHTML = `Meter = ${meter}`
-        document.getElementById("output2").innerHTML = `Kilometer = ${kilometer}`
-        document.getElementById("output3").innerHTML = `Mile = ${mile}`
+        class Cyliender extends MyMath {
+            constructor(radius, height) {
+                super();
+                this.radius = radius;
+                this.height = height;
+            }
+            getSurfaceArea() {
+                //2pirh + 2pirr
+                let surfaceArea = (2 * super.getPI() * this.radius * this.height) + (2 * super.getPI() * super.getSquare(this.radius));
+                return surfaceArea;
+
+            }
+        }
+        class Sphere extends Circle {
+            constructor(radius) {
+                super();
+                this.radius = radius
+            }
+            getSphereArea() {
+                let temp = 4 * super.getArea(this.radius);
+                return temp;
+            }
+        }
+        // create object
+        let radius = parseInt(prompt("Enter the value of radius"));
+        let s1 = new Sphere(radius);
+        var sphereArea = s1.getSphereArea();
+        document.getElementById("output1").innerHTML = `Area of Sphere is ${sphereArea}`
     </script>
 </body>
 
