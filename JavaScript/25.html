@@ -30,6 +30,7 @@
         let score = document.getElementById("click");
         // console.log(score);
         let size = score.length
+        // 2nd way of event handling
         score.onclick = function () {
             // alert("hi");
             let points = document.getElementById("output");
@@ -44,6 +45,7 @@
                     </thead>`
             document.getElementById("output").innerHTML = message
 
+            //2nd technique to create object
             var Ipl = new Object({
                 team: "",
                 matches: 0,
