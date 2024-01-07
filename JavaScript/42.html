@@ -4,93 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookies</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Object Cloning</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-6 offset-3 mt-5">
-                <div class="card">
-                    <div class="card-header text-center text-bg-warning">
-                        <h2>Working with Cookies</h2>
-                    </div>
-                    <div class="card-body">
-                        <form onsubmit="return SaveCookies();" action="">
-                            <div class="mb-3 form-group">
-                                <label for="keyname" class="form-label">Key Name</label>
-                                <input class="form-control" type="text" name="keyname" id="keyname"
-                                    placeholder="Enter Key Name" required />
-                            </div>
-                            <div class="mb-3 form-group">
-                                <label for="keyvalue" class="form-label">Key Value</label>
-                                <input class="form-control" type="text" name="keyvalue" id="keyvalue"
-                                    placeholder="Enter Key Value" required />
-                            </div>
-                            <div>
-                                <button class="btn btn-primary" type="submit">Cookies created/updated</button>
-                                <button onclick="GetCookies();" class="btn btn-success" type="button">Get
-                                    Cookies</button>
-                                <button onclick="DeleteCookies();" class="btn btn-danger" type="button">Delete
-                                    Cookies</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="common.js"></script>
-    <script src="cookies.js"></script>
+    <h1>Object Cloning</h1>
+    <hr>
+    <b>Open Console</b>
     <script>
-        let SaveCookies = () => {
-            // alert("hi");
-            let keyname = h("keyname").value;
-            let keyvalue = h("keyvalue").value;
-            console.log(keyname, keyvalue);
-            setCookie(keyname, keyvalue);
-            h("keyname").value = "";
-            h("keyvalue").value = "";
-            return false;
+        var object1 = {
+            name: "Jignesh",
+            surname: "Mehta",
+            age: 20,
+        };
+        // var object2 = object1 // wrong way
+        // by this method we can give only reference of object 1 in object 2 , if we change any of the property in either object it will be changed in both the objects
+
+        var object2 = {};
+        for (let key in object1) {
+            object2[key] = object1[key];
         }
-        let GetCookies = function(){
-            let keyname = h("keyname").value;
-            if (keyname == "") {
-                alert("Key Name can not be blank");
-            }
-            else {
-                // get cookies
-                let value = getCookie(keyname);
-                if (value == "") {
-                    alert("No such cookies");
-                }
-                else {
-                    h("keyvalue").value = value;
-                }
-            }
-        }
-        function DeleteCookies(){
-            let keyname = h("keyname").value;
-            if (keyname == "") {
-                alert("Key Name can not be blank");
-            }
-            else {
-                let value = getCookie(keyname);
-                if (value == "") {
-                    alert("No such cookies");
-                }
-                else {
-                    // Delete Cookies
-                    setCookie(keyname,"",-1);
-                    alert("Cookies has been deleted");
-                }
-            }
-        }
+        console.log("before change", object1, object2);
+
+        //we can change any property of objets without affecting each other 
+        object1.name = "Kiran"; // it will be changed only in object 1 not in object 2
+        object2.age = 25; // it will be changed only in object 2 not in object 1
+        console.log("after change", object1, object2);
     </script>
 </body>
 
