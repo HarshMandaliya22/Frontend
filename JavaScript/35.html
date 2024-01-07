@@ -4,85 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array in JavaScript</title>
+    <title>Function Binding</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1 class="text-center fw-bold mt-5">Array in JavaScript</h1>
-    <h4 class="text-center mt-3">Open Console</h4>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12">
+                <h1 class="text-center fw-bold">Function Binding</h1>
+                <h4 class="text-center mt-3">use Console</h4>
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script>
-        function display(array) {
-            console.log(array);
+        var person = {
+            name: "Harsh Mandaliya",
+            age: 23,
+            display: function () {
+                console.log(this.name,this.age);
+            }
         }
+        // person.display(); // normally we add this line to call function
 
-        //numeric array
-        var number = [11, 5, 2, 6, 1, 8];
-        display(number);
 
-        // string array
-        var names = ["Rohit", "Japan", "Chinmay", "Ibrahim", "Tanishk"];
-        display(names);
+        // var temp = person.display // creating alias of object 
+        // temp(); //wrong way (it will show error)
 
-        //emty array 
-        var counties = [];
-        display(counties);
-        
-        //add new values into array at the end of array
-        counties.push("Russia");
-        counties.push("Japan");
-        counties.push("China");
-        counties.push("India");
-        counties.push("Thiland");
-        display(counties);
-        
-        // add new value into array at the bigining of then array
-        counties.unshift("US");
-        counties.unshift("UK");
-        display(counties);
-        
-        //remove any value from array
-        counties.splice(2,1); // splice(number of position to start removing value , number of values to remove from array)
-        display(counties);
-        
-        //sort the array
-        counties.sort();
-        display(counties);
-        
-        //sorting array of numbers is little bit different
-        number.sort(function(previous,next)
-        {
-            return previous-next;
-        });
-        display(number);
-        
-        //reverse order
-        counties.reverse();
-        display(counties);
-        
-        // change the value
-        counties[4] = "Bharat"
-        display(counties);
-
-        //create an empty array
-        var square = [];
-        //using loop 
-        for(let index=0;index<number.length;index=index+1)
-        {
-            console.log(index,number[index]);
-            square.push(number[index] * number[index]);
-        }
-        display(square);
-        
-        //generate cube using array.map method
-        var cube = number.map(function(num){
-            return num * num * num;
-        });
-        display(cube);
+        var temp = person.display.bind(person); // correct way 
+        temp();
 
     </script>
 </body>
