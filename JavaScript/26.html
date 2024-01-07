@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ES6 way to create class</title>
+    <title>Student Info</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -13,58 +13,58 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="card mt-5 ">
-                    <div class="card-body">
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody id="output">
+                <h1>3rd method to create object</h1>
+                <hr />
+                <b>use console, press (ctrl+shift+k)</b>
+                <table width="100%" class="table table-bordered table-striped" border="1" align="center"
+                    cellpadding="10">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Weight</th>
+                            <th>Gender</th>
+                        </tr>
+                    </thead>
+                    <tbody id="output">
 
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-        <script>
-            //ES6 way to create class
-            class Item{
-                constructor(name,price,quantity){
-                    this.name = name;
-                    this.price = price;
-                    this.quantity = quantity;
-                    this.total = this.price * this.quantity
-                    console.log("constructor is called...")
+    <script>
+        //3rd method to create object
+        function Student(name, age, weight, gender) {
+            this.name = name,
+                this.age = age,
+                this.weight = weight,
+                this.gender = gender,
+                this.display = function () {
+                    if (this.gender === true) {
+                        this.gender = "male";
+                    }
+                    else {
+                        this.gender = "female";
+                    }
+                    console.log("Name = " + this.name + " Age = " + this.age + " Weight = " + this.weight + " Gender = " + this.gender);
+                    var tr = ` <tr>
+                                 <td>${this.name}</td>
+                                 <td>${this.age}</td>
+                                 <td>${this.weight}</td>
+                                 <td>${this.gender}</td>
+                                </tr>`;
+                    document.getElementById('output').innerHTML += tr;
                 }
-                display(){
-                    console.log(this.name,this.price,this.quantity);
-                    let temp = ` <tr>
-                                    <td>${this.name}</td>
-                                    <td>${this.price}</td>
-                                    <td>${this.quantity}</td>
-                                    <td>${this.total}</td>
-                            </tr>`;
-                document.getElementById("output").innerHTML += temp;
-                }
-            }
-
-            //creating object
-            //var object-name = new classname();
-            var i1 = new Item("Shampoo",100,30);
-            i1.display();
-            var i2 = new Item("Soap",30,3);
-            i2.display();
-        </script>
+        }
+        var g1 = new Student("Ghanshyam", 15, 50, true);
+        g1.display();
+        var g2 = new Student("Bhakti", 20, 50, false);
+        g2.display();
+    </script>
 </body>
 
 </html>
